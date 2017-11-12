@@ -5,20 +5,12 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+1. Install RVM for Ruby version control (here)[https://rvm.io/rvm/install]
 
-* System dependencies
+2. Using RVM, install ruby 2.3.3
 
-* Configuration
+3. Install the gem installer gem (here)[http://bundler.io/]
 
-* Database creation
+4. Install project dependencies using the bundler gem
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+5. Run the local server with `rails s`
