@@ -1,0 +1,8 @@
+.container.p-3
+  .row
+    .col-2
+      = render 'layouts/left_side_bar'
+    .col-8.background-content
+      = yield
+    .col-2
+      = render 'layouts/right_side_bar'

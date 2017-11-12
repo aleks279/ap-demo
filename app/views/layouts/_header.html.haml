@@ -1,0 +1,11 @@
+.row.h-100.background-header
+  .col-2.align-middle{:align => "center"}
+    %a{:href => root_path}
+      Home
+  .col.background-header
+
+.row.align-items-center.background-header.p-4
+  %ul.nav.mx-auto
+    - 7.times do |n|
+      %li.nav-item
+        %a.nav-link.active{:href => "#"} Link number #{ n }

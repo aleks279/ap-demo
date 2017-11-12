@@ -1,0 +1,13 @@
+%h2 #{ @page.title }
+- @page.sections.each do |section|
+  .row
+    .col
+      %h3 #{ section.title }
+      - if section.image
+        .row.justify-content-center
+          .col
+            = image_tag(section.image, class: 'rounded mx-auto d-block')
+      .row.justify-content-center
+        .col
+          #{ section.content }
+      
