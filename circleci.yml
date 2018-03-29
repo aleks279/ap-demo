@@ -1,5 +1,17 @@
 deployment:
-  prod:
+  production:
     branch: master
-    heroku:
-      appname: ap-demo-qa
+    commands:
+      - |
+        cat >~/.netrc <<EOF
+        machine api.heroku.com
+          login $HEROKU_LOGIN
+          password $HEROKU_API_KEY
+        machine git.heroku.com
+          login $HEROKU_LOGIN
+          password $HEROKU_API_KEY
+        EOF
+      - chmod 600 ~/.netrc # Heroku cli complains about permissions without this
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+      - git push git@heroku.com:ap-demo-qa.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app ap-demo-qa
