@@ -5,7 +5,7 @@ ActiveAdmin.register Section do
     selectable_column
     id_column
     column 'Page' do |section|
-      "#{section.page.title}"
+      section.page.title.to_s
     end
     column :title
     actions

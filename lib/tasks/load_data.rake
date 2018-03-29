@@ -4,24 +4,24 @@ namespace :load_data do
   task all: :environment do
     Rake::Task['load_data:page_categories'].invoke
   end
-  
+
   desc "Create page categories"
   task page_categories: :environment do
-    4.times do |t|
+    4.times do |_t|
       category = update_or_create_page_category(name: Faker::GameOfThrones.house)
 
       7.times do |page|
         page = update_or_create_page(
           title: Faker::Cat.name,
-          page_category_id: category.id
+          page_category_id: category.id,
         )
 
-        5.times do |section|
+        5.times do |_section|
           update_or_create_section(
             title: Faker::Friends.quote,
             image: Faker::Avatar.image("my-own-slug"),
             content: Faker::Lorem.paragraph,
-            page_id: page.id
+            page_id: page.id,
           )
         end
       end

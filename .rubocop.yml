@@ -93,4 +93,5 @@ Metrics/BlockLength:
   Exclude:
     - "spec/**/*_spec.rb"
     - "spec/factories/*.rb"
+    - "lib/tasks/*.rake"
     - "config/routes.rb" # we have a lot of routes. tough shit.

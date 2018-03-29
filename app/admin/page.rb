@@ -6,7 +6,7 @@ ActiveAdmin.register Page do
     id_column
     column :title
     column 'Category' do |page|
-      "#{page.page_category.name}"
+      page.page_category.name.to_s
     end
     actions
   end
