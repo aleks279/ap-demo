@@ -54,9 +54,9 @@ jobs:
                             $TEST_FILES
 
       # collect reports
-      deployment:
-        production:
-          branch: master
-          commands:
-            - git push https://git.heroku.com/ap-demo-qa.git $CIRCLE_SHA1:refs/heads/master
-            - heroku run rake db:migrate --app ap-demo-qa
+      - deployment:
+          production:
+            branch: master
+            commands:
+              - git push https://git.heroku.com/ap-demo-qa.git $CIRCLE_SHA1:refs/heads/master
+              - heroku run rake db:migrate --app ap-demo-qa
