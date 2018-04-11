@@ -31,8 +31,6 @@ gem 'haml-rails', '~> 0.9.0'
 
 # Utilities
 gem 'devise'
-gem 'activeadmin'
-gem 'active_skin'
 gem 'faker'
 gem 'rails_12factor'
 gem 'omniauth'
