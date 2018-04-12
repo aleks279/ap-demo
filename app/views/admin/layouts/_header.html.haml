@@ -1,0 +1,19 @@
+.row.h-100.background-header
+  .col-2.align-middle{:align => "center"}
+    = link_to 'Home', root_path
+  - if user_signed_in?
+    .col-2.align-middle{:align => "center"}
+      = link_to 'Admin portal', admin_pages_path
+  .col-2.align-middle{:align => "center"}
+    - unless user_signed_in?
+      = link_to 'Login', new_user_session_path
+    - else
+      = link_to 'Log Out', destroy_user_session_path
+  .col.background-header
+
+.row.align-items-center.background-header.p-4
+  %ul.nav.mx-auto
+    %li.nav-item
+      = link_to 'Pages', admin_pages_path, class: 'nav-link active'
+    %li.nav-item
+      = link_to 'Categories', admin_page_categories_path, class: 'nav-link active'

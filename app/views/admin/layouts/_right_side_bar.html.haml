@@ -1,0 +1,6 @@
+.background-sidebar.p-3
+  - PageCategory.all.each do |category|
+    %h5 #{ category.name }
+    .list-group
+      - category.pages.each do |page|
+        = link_to page.title, page, class: 'list-group-item list-group-item-action'
