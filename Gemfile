@@ -34,6 +34,7 @@ gem 'devise'
 gem 'faker'
 gem 'rails_12factor'
 gem 'omniauth'
+gem 'cocoon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
