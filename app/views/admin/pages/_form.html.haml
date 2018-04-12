@@ -1,4 +1,11 @@
 = form_for [:admin, @page] do |f|
+  - if @page.errors.any?
+    #errors
+      %p
+        = "#{pluralize(@page.errors.count, 'Error')} prevented this record from being saved."
+      %ul
+        - @page.errors.full_messages.each do |error|
+          %li= error
   .field
     = f.label 'Page title'
     %br
