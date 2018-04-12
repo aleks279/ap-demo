@@ -43,4 +43,12 @@ class Admin::PagesController < Admin::BaseController
     @page = Page.find(params[:id])
   end
 
+  def page_params
+    params.require(:page).permit(
+      :title, :page_category_id, sections_attributes: [
+        :id, :title, :content, :image, :_destroy,
+      ]
+    )
+  end
+
 end

@@ -1,4 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
+  before_action :all_pages
+  before_action :all_categories
 
   def new
     super
@@ -25,6 +27,16 @@ class Users::SessionsController < Devise::SessionsController
     else
       super
     end
+  end
+
+  private
+
+  def all_pages
+    @pages = Page.all
+  end
+
+  def all_categories
+    @categories = PageCategory.all
   end
 
 end

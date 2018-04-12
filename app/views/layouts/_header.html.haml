@@ -15,6 +15,6 @@
 
 .row.align-items-center.background-header.p-4
   %ul.nav.mx-auto
-    - 7.times do |n|
+    - @pages.each do |page|
       %li.nav-item
-        %a.nav-link.active{:href => "#"} Link number #{ n }
+        = link_to "#{page.title}", page_path(page), class: 'nav-link active'

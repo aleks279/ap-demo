@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
 
-  def index; end
+  def index
+    @pages = Page.all
+    @categories = PageCategory.all
+  end
 
 end
