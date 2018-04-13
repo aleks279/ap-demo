@@ -17,3 +17,4 @@
 /tmp
 erd.pdf
 config/database.yml
+coverage/
