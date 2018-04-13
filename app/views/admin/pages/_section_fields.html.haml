@@ -1,0 +1,17 @@
+.nested-fields
+  .field
+    = f.label 'Section Title'
+    %br
+    = f.text_field :title
+
+  .field
+    = f.label 'Image (optional)'
+    %br
+    = f.text_field :image
+
+  .field
+    = f.label 'Content'
+    %br
+    = f.text_area :content
+
+  = link_to_remove_association 'Remove section', f

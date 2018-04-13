@@ -1,16 +1,11 @@
-class PagesController < ApplicationController
-
-  before_action :find_page, only: [:show]
+class Admin::BaseController < ApplicationController
+  before_action :authenticate_user!
   before_action :all_pages
   before_action :all_categories
 
-  def show; end
+  layout 'admin/layouts/admin'
 
   private
-
-  def find_page
-    @page = Page.find(params[:id])
-  end
 
   def all_pages
     @pages = Page.all

@@ -8,6 +8,8 @@ require 'rspec/rails'
 require 'rspec/its'
 require 'shoulda/matchers'
 require 'faker'
+require 'simplecov'
+SimpleCov.start
 
 ActiveRecord::Migration.maintain_test_schema!
 

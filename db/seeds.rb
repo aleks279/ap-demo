@@ -1,9 +1,8 @@
 require 'faker'
 
 if Rails.env.development?
-  AdminUser.create!(
+  User.create!(
     email: 'admin@example.com',
-    password: 'password',
-    password_confirmation: 'password',
+    encrypted_password: 'password',
   )
 end

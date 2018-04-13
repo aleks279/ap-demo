@@ -1,0 +1,27 @@
+= form_for [:admin, @page] do |f|
+  - if @page.errors.any?
+    #errors
+      %p
+        = "#{pluralize(@page.errors.count, 'Error')} prevented this record from being saved."
+      %ul
+        - @page.errors.full_messages.each do |error|
+          %li= error
+  .field
+    = f.label 'Page title'
+    %br
+    = f.text_field :title
+
+  .field
+    = f.label 'Page category'
+    %br
+    = f.collection_select :page_category_id, PageCategory.all, :id, :name
+
+  %h3 Sections
+  #sections
+    = f.fields_for :sections do |section_form|
+      = render 'section_fields', f: section_form
+
+    .links
+      = link_to_add_association 'Add section', f, :sections
+
+  = f.submit

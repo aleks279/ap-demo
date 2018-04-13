@@ -1,5 +1,5 @@
 .background-sidebar.p-3
-  - @categories.each do |category|
+  - PageCategory.all.each do |category|
     %h5 #{ category.name }
     .list-group
       - category.pages.each do |page|

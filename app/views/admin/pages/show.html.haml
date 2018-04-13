@@ -1,0 +1,22 @@
+%h2 #{ @page.title }
+
+- if @page.page_category
+  %h4 Category: #{ @page.page_category.name }
+
+= link_to 'Back', admin_pages_path
+|
+= link_to 'Edit', edit_admin_page_path(@page)
+|
+= link_to 'Delete', admin_page_path(@page), method: :delete, data: { confirm: 'Are you sure?' }
+
+- @page.sections.each do |section|
+  .row
+    .col
+      %h3 #{ section.title }
+      - if section.image
+        .row.justify-content-center
+          .col
+            = image_tag(section.image, class: 'rounded mx-auto d-block')
+      .row.justify-content-center
+        .col
+          #{ section.content }

@@ -1,26 +1,10 @@
-example_id                                           | status  | run_time        |
----------------------------------------------------- | ------- | --------------- |
-./spec/controllers/pages_controller_spec.rb[1:1:1]   | pending | 0.00787 seconds |
-./spec/controllers/pages_controller_spec.rb[1:2:1]   | pending | 0.00444 seconds |
-./spec/controllers/pages_controller_spec.rb[1:3:1]   | failed  | 0.04077 seconds |
-./spec/controllers/pages_controller_spec.rb[1:4:1]   | pending | 0.00353 seconds |
-./spec/controllers/pages_controller_spec.rb[1:5:1:1] | pending | 0.01017 seconds |
-./spec/controllers/pages_controller_spec.rb[1:5:1:2] | pending | 0.00434 seconds |
-./spec/controllers/pages_controller_spec.rb[1:5:2:1] | pending | 0.00534 seconds |
-./spec/controllers/pages_controller_spec.rb[1:6:1:1] | pending | 0.00337 seconds |
-./spec/controllers/pages_controller_spec.rb[1:6:1:2] | pending | 0.00335 seconds |
-./spec/controllers/pages_controller_spec.rb[1:6:2:1] | pending | 0.00409 seconds |
-./spec/controllers/pages_controller_spec.rb[1:7:1]   | pending | 0.00397 seconds |
-./spec/controllers/pages_controller_spec.rb[1:7:2]   | pending | 0.00597 seconds |
-./spec/helpers/home_helper_spec.rb[1:1]              | pending | 0.00004 seconds |
-./spec/helpers/pages_helper_spec.rb[1:1]             | pending | 0.00005 seconds |
-./spec/helpers/sections_helper_spec.rb[1:1]          | pending | 0.00004 seconds |
-./spec/models/admin_user_spec.rb[1:1]                | pending | 0.00006 seconds |
-./spec/models/page_category_spec.rb[1:1:1]           | passed  | 0.02011 seconds |
-./spec/models/page_category_spec.rb[1:2:1]           | passed  | 0.00642 seconds |
-./spec/models/page_spec.rb[1:1:1]                    | passed  | 0.00922 seconds |
-./spec/models/page_spec.rb[1:2:1]                    | passed  | 0.00415 seconds |
-./spec/models/page_spec.rb[1:2:2]                    | passed  | 0.00884 seconds |
-./spec/models/section_spec.rb[1:1:1]                 | passed  | 0.01149 seconds |
-./spec/models/section_spec.rb[1:1:2]                 | passed  | 0.00523 seconds |
-./spec/models/section_spec.rb[1:2:1]                 | passed  | 0.00369 seconds |
+example_id                                 | status | run_time        |
+------------------------------------------ | ------ | --------------- |
+./spec/models/page_category_spec.rb[1:1:1] | passed | 0.32003 seconds |
+./spec/models/page_category_spec.rb[1:2:1] | passed | 0.00352 seconds |
+./spec/models/page_spec.rb[1:1:1]          | passed | 0.01141 seconds |
+./spec/models/page_spec.rb[1:2:1]          | passed | 0.00241 seconds |
+./spec/models/page_spec.rb[1:2:2]          | passed | 0.00285 seconds |
+./spec/models/section_spec.rb[1:1:1]       | passed | 0.00883 seconds |
+./spec/models/section_spec.rb[1:1:2]       | passed | 0.00541 seconds |
+./spec/models/section_spec.rb[1:2:1]       | passed | 0.00247 seconds |

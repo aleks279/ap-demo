@@ -9,12 +9,11 @@
       = link_to 'Login', new_user_session_path
     - else
       = link_to 'Log Out', destroy_user_session_path
-
-    
   .col.background-header
 
 .row.align-items-center.background-header.p-4
   %ul.nav.mx-auto
-    - @pages.each do |page|
-      %li.nav-item
-        = link_to "#{page.title}", page_path(page), class: 'nav-link active'
+    %li.nav-item
+      = link_to 'Pages', admin_pages_path, class: 'nav-link active'
+    %li.nav-item
+      = link_to 'Categories', admin_page_categories_path, class: 'nav-link active'

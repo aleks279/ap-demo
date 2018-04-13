@@ -31,11 +31,10 @@ gem 'haml-rails', '~> 0.9.0'
 
 # Utilities
 gem 'devise'
-gem 'activeadmin'
-gem 'active_skin'
 gem 'faker'
 gem 'rails_12factor'
 gem 'omniauth'
+gem 'cocoon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,6 +48,7 @@ group :development, :test do
 
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'simplecov'
 end
 
 group :development do
@@ -62,6 +62,5 @@ group :development do
 end
 
 group :test do
-  gem 'simplecov'
   gem 'capybara'
 end
