@@ -34,15 +34,68 @@ describe 'PageCategories' do
     context 'with valid attributes' do
       it 'creates the new category' do
         expect {
-          post '/admin/page_categories', params: { page_category: attributes_for(:page_category) }
+          post '/admin/page_categories', page_category: attributes_for(:page_category)
         }.to change(PageCategory, :count).by(1)
       end
 
-      xit 'redirects to the new category' do
-        post '/admin/page_categories', params: { page_category: attributes_for(:page_category) }
+      it 'redirects to the new category' do
+        post '/admin/page_categories', page_category: attributes_for(:page_category)
         expect(response).to redirect_to admin_page_category_path(PageCategory.last)
+      end
+    end
+
+    context 'with invalid attributes' do
+      it 'doesnt create the new category' do
+        expect {
+          post '/admin/page_categories', page_category: attributes_for(:invalid_page_category)
+        }.to_not change(PageCategory, :count)
+      end
+
+      it 're-renders the new method' do
+        post '/admin/page_categories', page_category: attributes_for(:invalid_page_category)
+        expect(response).to render_template :new
       end
     end
   end
 
+  describe 'PUT update category' do
+    let(:category) { create(:page_category) }
+
+    context 'with valid params' do
+      before :each do
+        put admin_page_category_path(category), page_category: { name: 'new name' }
+        category.reload
+      end
+
+      it 'updates the category' do
+        expect(category.name).to eq 'new name'
+      end
+
+      it 'redirects to the updated category' do
+        expect(response).to redirect_to admin_page_category_path(category)
+      end
+    end
+
+    context 'with invalid params' do
+      it 'doesnt update the category' do
+        expect {
+          put admin_page_category_path(category), page_category: { name: '' }
+        }.to_not change{ category.reload.name }
+      end
+
+      it 're-renders the edit method' do
+        put admin_page_category_path(category), page_category: { name: '' }
+        expect(response).to render_template :edit
+      end
+    end
+  end
+
+  describe 'DELETE category' do
+    let(:category) { create(:page_category) }
+
+    it 'goes back to category index' do
+      delete admin_page_category_path(category)
+      expect(response).to redirect_to admin_page_categories_path
+    end
+  end
 end
