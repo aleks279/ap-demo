@@ -18,3 +18,4 @@
 erd.pdf
 config/database.yml
 coverage/
+spec/examples.txt
