@@ -30,4 +30,19 @@ describe 'PageCategories' do
     end
   end
 
+  describe 'POST new page category' do
+    context 'with valid attributes' do
+      it 'creates the new category' do
+        expect {
+          post '/admin/page_categories', params: { page_category: attributes_for(:page_category) }
+        }.to change(PageCategory, :count).by(1)
+      end
+
+      xit 'redirects to the new category' do
+        post '/admin/page_categories', params: { page_category: attributes_for(:page_category) }
+        expect(response).to redirect_to admin_page_category_path(PageCategory.last)
+      end
+    end
+  end
+
 end
