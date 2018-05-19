@@ -31,6 +31,13 @@ describe 'PageCategories' do
   end
 
   describe 'POST new page category' do
+    context 'rendering the template for new category' do
+      it 'goes to the template' do
+        get new_admin_page_category_path
+        expect(response).to be_success
+      end
+    end
+
     context 'with valid attributes' do
       it 'creates the new category' do
         expect {
