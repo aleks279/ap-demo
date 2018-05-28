@@ -45,6 +45,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec-its'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 
   gem 'shoulda-matchers'
   gem 'database_cleaner'
